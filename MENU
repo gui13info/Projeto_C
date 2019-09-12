@@ -17,10 +17,13 @@ int main()
     int num = 0, num1, resultado;
 
     do{
-    printf("\n*==========MENU==========*\n\n\n\n\n");
-    printf("Digite '1' para saber se seu número é par: \n");
-    printf("*========================*\n");
-    printf("Número para entrar no menu: ");
+    printf("\n*===================MENU===================*\n\n");
+    printf("OPÇÕES DO MENU:\n"
+           "Digite '0' para sair do MENU\n"
+           "Digite '1' para saber se seu número é par\n"
+           );
+    printf("\n*==========================================*\n\n");
+    printf("DIGITE A OPÇÃO PARA ENTRAR NO MENU: ");
     scanf("%d", &num);
 
     switch(num){
@@ -30,11 +33,16 @@ int main()
         exit(0);
         break;
     case 1:
-        printf("Digite um número: ");
+        printf("\nDigite um número: ");
         scanf("%d", &num1);
         resultado = par(num1);
-        printf("O resto da divisão é: %d", resultado);
-
+            if (num1%2==0){
+                printf("O resto da divisão é: %d", resultado);
+                printf("\nSeu número é par");
+            }else{
+                printf("O resto da divisão é: %d", resultado);
+                printf("\nSeu número não é par");
+            }
         break;
     case 2:
 
