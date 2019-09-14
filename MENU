@@ -25,6 +25,8 @@ int main()
     //MOSTRAR MEU NOME
     char str[30] = "Guilherme";
     int matricula;
+    //PRIMO
+    int primo, i, resultado_primo = 0;
 
 
 
@@ -39,6 +41,7 @@ int main()
            "Digite '4' para saber se o ano é bissexto.\n"
            "Digite '5' para saber sua média ponderada.\n"
            "Digite '6' para saber sua média.\n"
+           "Digite '8' para saber se o número é primo.\n"
            "Digite '10' para ver o nome do estudante.\n"
            );
     printf("\n*======================================================*\n\n");
@@ -117,6 +120,19 @@ int main()
 
         break;
     case 8:
+        printf("\nDigite um número: ");
+        scanf("%d", &primo);
+
+        for (i = 2; i <= primo/2; i++){
+            if(num % i == 0){
+                resultado_primo++;
+            }
+        }
+        if (resultado_primo == 0){
+            printf("\nÉ um número primo %d\n", primo);
+        }else{
+            printf("\nNão é um número primo %d\n", primo);
+        }
 
         break;
     case 9:
