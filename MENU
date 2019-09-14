@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <conio.h>
+#include <math.h>
 
 int par (int n1)
 {
@@ -14,15 +15,25 @@ int main()
 {
     setlocale(LC_ALL, "");
 
-    int num = 0, num1, resultado;
+    int num = 0, num1, resultado, ano;
+    //potenciação
+    int n2;
+    float n1, poten, raiz;
+    //nota ponderada
+    float not1, not2, not3, media;
+
 
     do{
-    printf("\n*===================MENU===================*\n\n");
+    printf("\n*=========================MENU=========================*\n\n");
     printf("OPÇÕES DO MENU:\n"
            "Digite '0' para sair do MENU\n"
-           "Digite '1' para saber se seu número é par\n"
+           "Digite '1' para saber se seu número é par.\n"
+           "Digite '2' para saber potencia em notação científica.\n"
+           "Digite '3' para saber a raiz em notação científica.\n"
+           "Digite '4' para saber se o ano é bissexto.\n"
+           "Digite '5' para saber sua média ponderada.\n"
            );
-    printf("\n*==========================================*\n\n");
+    printf("\n*======================================================*\n\n");
     printf("DIGITE A OPÇÃO PARA ENTRAR NO MENU: ");
     scanf("%d", &num);
 
@@ -45,15 +56,46 @@ int main()
             }
         break;
     case 2:
-
+        printf("\nDigite o número: ");
+        scanf("%f", &n1);
+        printf("Digite o expoente: ");
+        scanf("%d", &n2);
+        poten = pow(n1, n2);
+        printf("O resultado em notação científica é %e\n", poten);
         break;
     case 3:
-
+        printf("\nDigite o número: ");
+        scanf("%f", &n1);
+        printf("Digite o expoente: ");
+        scanf("%d", &n2);
+        poten = pow(n1, n2);
+        raiz = sqrt(poten);
+        printf("O resultado é %e\n", raiz);
         break;
     case 4:
-
+        printf("\nDigite o ano: ");
+        scanf("%d", &ano);
+        ano = ano%4;
+        if( ano == 0){
+            printf("Esse ano é bissexto\n");
+        }else{
+            printf("Esse ano não é bissexto\n");
+        }
         break;
     case 5:
+        printf("Digite sua primeira nota: ");
+        scanf("%f", &not1);
+        printf("Digite sua segunda nota: ");
+        scanf("%f", &not2);
+        printf("Digite sua terceira nota: ");
+        scanf("%f", &not3);
+        media = ((not1*1)+(not2*1)+(not3*2))/4;
+        printf("Sua média ponderada é: %.2f", media);
+        if (media >= 60.0){
+            printf("\nVocê foi aprovado!!");
+        }else{
+            printf("\nVocê foi reprovado!!");
+        }
 
         break;
     case 6:
@@ -73,7 +115,7 @@ int main()
         break;
 
     default:
-        printf("Número Inválido\n");
+        printf("NÚMERO INVÁLIDO!!!\n");
     }
     }while(num != 0);
 
