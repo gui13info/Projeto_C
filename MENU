@@ -3,6 +3,7 @@
 #include <locale.h>
 #include <conio.h>
 #include <math.h>
+#include <string.h>
 
 int par (int n1)
 {
@@ -21,6 +22,11 @@ int main()
     float n1, poten, raiz;
     //nota ponderada
     float not1, not2, not3, media;
+    //MOSTRAR MEU NOME
+    char str[30] = "Guilherme";
+    int matricula;
+
+
 
 
     do{
@@ -32,6 +38,8 @@ int main()
            "Digite '3' para saber a raiz em notação científica.\n"
            "Digite '4' para saber se o ano é bissexto.\n"
            "Digite '5' para saber sua média ponderada.\n"
+           "Digite '6' para saber sua média.\n"
+           "Digite '10' para ver o nome do estudante.\n"
            );
     printf("\n*======================================================*\n\n");
     printf("DIGITE A OPÇÃO PARA ENTRAR NO MENU: ");
@@ -96,10 +104,14 @@ int main()
         }else{
             printf("\nVocê foi reprovado!!");
         }
-
         break;
     case 6:
-
+       printf("Digite sua primeira nota: ");
+        scanf("%f", &not1);
+        printf("Digite sua segunda nota: ");
+        scanf("%f", &not2);
+        media = (not1 + not2)/2;
+        printf("Sua média é: %.2f",media);
         break;
     case 7:
 
@@ -111,7 +123,10 @@ int main()
 
         break;
     case 10:
-
+        strcat(str, " Marques de Matos");//CONCATENA COM O CONTEÚDO "Guilherme" COM O CONTEÚDO DA STRING str
+        printf("\nNome: %s\n", str);
+        matricula = 1910025433;
+        printf("Minha matrícula é: %X\n", matricula);
         break;
 
     default:
